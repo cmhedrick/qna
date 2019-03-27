@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from qna_app import models
+
+admin.site.register(models.Organization)
+admin.site.register(models.Staff)
+admin.site.register(models.Role)
