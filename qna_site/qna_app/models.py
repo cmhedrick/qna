@@ -72,3 +72,29 @@ class Staff(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.user.first_name, self.user.last_name)
+
+
+class Question(models.Model):
+    user = models.ForeignKey(
+        Staff,
+        on_delete=models.CASCADE,
+        related_name="questions",
+        null=True
+    )
+    org = models.ForeignKey(
+        Organization,
+        on_delete=models.CASCADE,
+        related_name="questions"
+    )
+    question = models.TextField()
+    answer = models.TextField()
+
+    @property
+    def is_answered(self):
+        return bool(self.answer)
+
+    def __unicode__(self):
+        return "%s: %s" % (self.org.org_name, self.question[:15])
+
+    def __str__(self):
+        return "%s: %s" % (self.org.org_name, self.question[:15])
