@@ -48,8 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qna_app',
-    'captcha'
+    'captcha',
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'qna_app.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
