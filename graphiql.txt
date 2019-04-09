@@ -1,0 +1,28 @@
+// graphiql test queries
+query getOrgs{
+  organizations{
+    id,
+    orgName
+  }
+}
+
+query getRoles{
+  roles{
+    id,
+    role
+  }
+}
+
+query getStaff{
+  staff{
+    id,
+  }
+}
+
+query getQuestions{
+  questions{
+    id,
+    question,
+    answer
+  }
+}
